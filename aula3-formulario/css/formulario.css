@@ -1,0 +1,72 @@
+:root{
+  --cor: #B5E8BC;
+  --teste: red;
+}
+
+body{
+  background-color:var(--cor);
+}
+
+.citacao{
+  margin-top: 75%;
+}
+
+cite{
+color: var(--teste);
+}
+
+input{
+  border-radius: 10px;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+select{
+  border-radius: 5px;
+}
+.hobbiesCheckbox{
+  width: 20%
+}
+textarea{
+  background-color: #EBDC87;
+  border-radius: 5px;
+  resize: none;
+  width: 75%;
+  float: right;
+}
+textarea:active{
+  background-color: #FFF99E;
+}
+
+.checkbox:focus {
+  margin-left: 20px;
+  /*transform: scale(1.1);*/
+}
+
+main{
+  display: flex;
+}
+
+.hobbies{
+  display: flex;
+}
+ nav{
+   margin-top: 50px;
+ }
+
+ nav button{
+   margin-right: 20%;
+ }
+
+ button{
+   border-radius: 5px;
+   border: dashed 1.5px #994D3F;
+ }
+
+h1{
+  text-align: center;
+}
+
+h1:hover{
+  transform: scale(1.1);
+  }

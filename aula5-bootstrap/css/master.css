@@ -1,0 +1,33 @@
+.red{
+  background-color: red;
+}
+
+.blue{
+  background-color: blue;
+}
+
+.green{
+  background-color: green;
+}
+
+.black{
+  background-color: black;
+}
+
+.caixa{
+  padding: 2%;
+  border: solid 3px yellow;
+  margin:5%;
+  width: auto;
+  height: auto;
+}
+
+div{
+  height: 10em;
+  width: auto;
+}
+
+.col-sm-1{
+  border-radius: 50%;
+  background-color: orange;
+}

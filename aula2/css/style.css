@@ -1,0 +1,81 @@
+
+body{
+  background: repeating-linear-gradient(45deg, #E07E25 5px, #332F2E 10px, #E07E25 5px);
+  background-attachment: fixed;
+  font-family: Stylish;
+  font-size: 2rem;
+  color: #85B370;
+}
+.perfil{
+  margin-top: 15%;
+}
+.formaçao{
+  list-style-type: none;
+}
+
+header{
+  display: inline-block;
+  width: 25%;
+  float: left;
+}
+
+header h1{
+
+  margin-left:100%;
+}
+
+h1{
+  font-family: Akronim;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+button{
+  border-radius: 15px;
+  background-color: #35EB4D;
+  border: solid 1px #00651B;
+}
+
+mark{
+  background-color: yellow;
+}
+
+img{
+  height: 400px;
+  width: auto;
+  border-radius: 50%;
+  border: solid 1px black;
+}
+
+img:hover{
+  transform: rotate(180deg);
+}
+
+.alura{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15%;
+}
+
+.alura a{
+  margin-top: 100px;
+}
+.dados{
+  display: inline-block;
+}
+.perfil{
+  float: right;
+}
+
+.menu button {
+
+  margin-top: 10%;
+  margin-left: calc(50% - 89px);
+}
+
+footer{
+  margin-top: 50px;
+}

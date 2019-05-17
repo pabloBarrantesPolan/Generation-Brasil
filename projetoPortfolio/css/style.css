@@ -1,0 +1,58 @@
+
+.nav-item{
+  border-left: solid 1px white;
+  display: inline;
+}
+.nav-item:first-child{
+  border: none;
+}
+
+img{
+  height: 20px;
+  width: auto;
+  }
+.nav-link  {
+  text-align: center;
+}
+
+.nav-link  img{
+  margin-left: 20%;
+}
+
+body{
+  background-color: #99cccd;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+  width: auto;
+  position: relative;
+}
+
+.foto img{
+  height: 200px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.nav-item a{
+  color: black;
+}
+
+.nav-item img{
+  margin-right: 2%;
+}
+
+.nav-link:hover{
+  text-decoration: underline;
+}
+
+.projeto img{
+  height: 200px;
+  width: auto;
+}
+
+.btn-certificado{
+  height: 25%;
+
+}

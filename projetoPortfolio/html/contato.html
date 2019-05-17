@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>pabloBarrantes - portfólio</title>
+  </head>
+  <body>
+
+    <header>
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+
+      <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home <img src="../images/home.png" alt=""> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="formacao.html">Formação Académica <img src="../images/academica.png" alt="Formação Académica"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="certificados.html">Certificados <img src="../images/merit.png" alt="certificados"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profisional.html">Experiência Profissional <img src="../images/portfolio.png" alt="Experiência Profissional"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projetos.html">Meus trabalhos <img src="../images/presentation.png" alt="Meus trabalhos"> </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contato.html">Contato <img src="../images/envelope.png" alt="Contato"> </a>
+          </li>
+
+        </ul>
+
+      </nav>
+    </header>
+      <main class="container">
+        <section class="dados form-group ">
+        <form class="form" action="#" method="post">
+            <label for="nome"> Nome:</label>
+              <input class="form-control" type="text" name="nome" placeholder="digite seu nome" required> <br>
+            <label for="sobrenome">Sobrenome:</label>
+              <input class="form-control" type="text" name="sobrenome" placeholder="digite seu sobrenome" required> <br>
+            <label for="email">E-mail:</label>
+              <input class="form-control" type="email" name="email" placeholder="exemplo@exemplo.com" required> <br>
+
+              <div class="genero">
+                <h3>Genero:</h3>
+                <input class="form-control" type="radio" name="genero" value="masculino"><label for="genero">masculino</label>
+                <input class="form-control" type="radio" name="genero" value="feminino"><label for="genero">feminino</label>
+                <input class="form-control" type="radio" name="genero" value="nao"><label for="genero">prefiro não responder</label> <br>
+              </div>
+
+            <label for="uf">UF:</label>
+
+              <select class="form-control" class="uf" name="UF" required>
+                <optgroup label="sudeste">
+                  <option value="sp">São Paulo</option>
+                  <option value="rj">Rio de Janeiro</option>
+                  <option value="mg">Minas Gerais</option>
+                </optgroup>
+
+                <optgroup label="nordeste">
+                  <option value="ce">Ceará</option>
+                  <option value="pi">Piaui</option>
+                  <option value="ma">Maranhão</option>
+                </optgroup>
+
+              </select>
+        </section>
+        <section class="hobbies form-group">
+          <div class="hobbiesCheckbox">
+            <h3>Hobbies:</h3>
+            <div class="checkbox"><input class="form-control" type="checkbox" name="hobbies" value="esportes"><label for="hobbies">esportes</label></div>
+            <div class="checkbox"><input class="form-control" type="checkbox" name="hobbies" value="musica"><label for="hobbies">música</label></div>
+            <div class="checkbox"><input class="form-control" type="checkbox" name="hobbies" value="cinema"><label for="hobbies">cinema</label></div>
+            <div class="checkbox"><input class="form-control" type="checkbox" name="hobbies" value="dormir"><label for="hobbies">dormir</label></div>
+            <div class="checkbox"><input class="form-control" type="checkbox" name="hobbies" value="programar!"><label for="hobbies">programar!</label></div> <br>
+          </div>
+          <textarea class="form-control" name="name" rows="8" cols="80" placeholder="digite uma mensagem..."></textarea><br>
+        </section>
+        <button class="btn btn-primary btn-lg" type="submit" name="btn-enviar">Enviar</button>
+      </form>
+    </main>
+
+
+      </body>
+  </html>

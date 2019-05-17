@@ -1,0 +1,35 @@
+body{
+  background-color: green;
+}
+
+header{
+  background-repeat: repeat;
+  background-image: repeating-linear-gradient( 45deg, purple, yellow 1px, purple);
+
+}
+
+nav{
+  background-color: blue;
+}
+
+h1{
+  font-family: akronim;
+  font-size: 400%;
+}
+
+ul{
+  list-style-type: square;
+}
+
+p{
+  text-decoration: overline;
+  color: red;
+}
+.p1 {
+  background: repeating-linear-gradient(
+  125deg,
+  #000 2px,
+  #FFE13A 10px
+  );
+
+}
