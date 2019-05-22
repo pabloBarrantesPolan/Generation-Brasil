@@ -39,3 +39,9 @@ document.getElementById('contact').textContent='Contato';
 let pai = document.querySelector('.social');
 let filho = pai.children.item(3);
 pai.removeChild(filho);
+
+// EVENTOS
+ let click = document.querySelector('#abracadabra');
+ click.addEventListener('click', function () {
+   alert('Ai! você clicou em mim!!!!');
+ });
