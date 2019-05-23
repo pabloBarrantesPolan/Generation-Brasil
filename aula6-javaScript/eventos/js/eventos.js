@@ -1,14 +1,13 @@
-let btnClick = document.querySelector('#click');
-
-btnClick.onclick = function () {
+document.querySelector('#click').addEventListener('click',function () {
   alert('ai, você clickou em mim!!!!');
-}
+});
 
-let btnClick2 = document.querySelector('#click2');
 
-btnClick2.onmouseover = function () {
-  alert('ai, você vai clickar em mim!!!!');
-}
+
+document.querySelector('#click2').addEventListener('mouseover',function () {
+    alert('ai, você vai clickar em mim!!!!');
+});
+
 
 let btnClick3 = document.querySelector('#click3');
 
@@ -33,4 +32,8 @@ texto.onkeydown = function (event) {
   if (tecla == 27) {
     alert("você apertou ESC!!!");
   }
+}
+
+function alerta() {
+  alert("olá desde HTML!")
 }
