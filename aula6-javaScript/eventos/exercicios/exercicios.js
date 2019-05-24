@@ -9,31 +9,33 @@ document.getElementById('btnFundo').addEventListener('click', function () {
 });
 
 function vendoImagem() {
-  alert('Estou vendo a imagem');
+  console.log('Estou vendo a imagem');
 }
 
 document.getElementById('imgClick').addEventListener('click', function () {
   alert('Estou clickando na imagem');
 });
 
-// document.querySelector('body').addEventListener('click', function () {
-//   this.style.background = 'red';
-// });
+function alteraFundo() {
+  this.style.background = "red";
+}
+
+document.body.addEventListener('click', alteraFundo);
+
+document.body.removeEventListener('click', alteraFundo);
 
 function errou(event) {
-  alert('Não é possivel enviar');
   event.preventDefault();
+  alert('Não é possivel enviar');
 }
 
 document.getElementById('imgClick').addEventListener('mouseover', function (event) {
-  let x = event.clientX;
-  let y = event.clientY;
-  console.log("o mouse está em " + x + "x e " + y +"y" );
+
+  console.log("o mouse está em " + event.clientX + "x e " + event.clientY +"y" );
 });
 
 
 // eventos com Timer
-
 
 function conta10() {
   setTimeout(function () {
@@ -43,9 +45,6 @@ function conta10() {
 
 
 // revisar o ciclo...
-
-while () {
-  setTimeout(function () {
-    alert("Hora do intervalo")
-  }, 5000);
+function contador() {
+  alert("Hora do intervalo!");
 }

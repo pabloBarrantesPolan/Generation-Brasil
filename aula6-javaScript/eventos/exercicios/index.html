@@ -10,16 +10,14 @@
 
     <title>Exercicios de Eventos</title>
   </head>
-  <body onmouseover="conta10()">
-    <div class="container">
-      <div class="row">
-        <button style="margin-top:15%;" id="btnOla" class="btn btn-outline-secondary" type="button" name="button">Cumprimentar</button>
+  <body  onload="setInterval('contador()', 5000); conta10()">
+    <div  class="container">
+      <div class="row" style="margin-top:10%;">
+        <button  id="btnOla" class="btn btn-outline-secondary" type="button" name="button">Cumprimentar</button>
+        <button   id="btnFundo" class="btn btn-outline-warning" type="button" name="button">Alterar Fundo</button>
       </div>
       <div class="row">
-        <button style="margin-top:15%; margin-bottom:15%" id="btnFundo" class="btn btn-outline-warning" type="button" name="button">Alterar Fundo</button>
-      </div>
-      <div class="row">
-        <img  onmouseover="vendoImagem()"class="img-thumbnail" src="http://lorempixel.com/100/100/" alt="imagem aleatoria">
+        <img  onmouseover="vendoImagem()" class="img-thumbnail" src="http://lorempixel.com/100/100/" alt="imagem aleatoria">
         <img id="imgClick"  class="img-thumbnail" src="http://lorempixel.com/300/200/" alt="imagem aleatoria">
 
       </div>
