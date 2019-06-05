@@ -1,6 +1,5 @@
 package veiculoUsado;
 
-import java.util.Scanner;
 
 public class Cliente {
     private String nome, sobreNome;

@@ -1,24 +1,28 @@
 package tripe;
 
 public class Tripe {
-    boolean dobrado;
-    int alturaMin, alturaMax, alturaAt;
+    private boolean dobrado;
+    private int alturaMin, alturaMax, alturaAt;
 
 
     public void definirAltura(Integer novaAltura){
         this.alturaAt = novaAltura;
     }
 
-    public void dobrar(){
+
+
+    private boolean dobrar(){
         if (!dobrado){
             alturaMin=alturaAt;
             dobrado = true;
+            return true;
         } else {
             System.out.println("O tripé ja esta dobrado");
+            return false;
         }
     }
 
-    public void desdobrar(){
+    private void desdobrar(){
         if (dobrado){
             alturaMax=alturaAt;
             dobrado=false;
@@ -27,8 +31,8 @@ public class Tripe {
         }
     }
 
-    public void guardar(){
-        if (dobrado && alturaAt==alturaMin){
+    private void guardar(){
+        if (dobrar()){
             System.out.println("pode guardar");
         }
     }

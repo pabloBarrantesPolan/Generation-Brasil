@@ -5,5 +5,6 @@ public class Exercicio4 {
         Tripe tripe = new Tripe();
         tripe.definirAltura(150);
         tripe.prontoParaGuardar();
+        tripe.prontoParaUsar();
     }
 }
