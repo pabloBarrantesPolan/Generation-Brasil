@@ -1,29 +1,25 @@
 package bancoSantander.model;
 
-import java.util.Scanner;
 
 public class ContaPoupanca extends Conta {
-    private double taxaJuros;
+    private final static double taxaJuros = 0.1;
 
-    public ContaPoupanca( Cliente cliente,  double taxaJuros) {
+    public ContaPoupanca( Cliente cliente) {
         super(cliente);
-        this.taxaJuros = taxaJuros;
+    }
+
+    public double getTaxaJuros() {
+        return taxaJuros;
     }
 
     @Override
-    public void saque() {
-        System.out.print("Que valor deseja sacar? ");
-        double valor = leia.nextDouble();
-        if(valor>saldo){
-            System.out.println("Você não tem saldo suficiente");
-        } else {
-            this.saldo -= valor;
-        }
+    public double saque(double valor) {
+        this.saldo -= valor;
+        return this.saldo;
     }
 
-    public void recolheJuros(){
+    public double recolheJuros(){
        double juros = saldo * this.taxaJuros;
-       this.saldo += juros;
-        System.out.println("calculando juros...");
+        return this.saldo += juros;
     }
 }

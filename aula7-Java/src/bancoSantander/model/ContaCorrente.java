@@ -1,6 +1,5 @@
 package bancoSantander.model;
 
-import java.util.Scanner;
 
 public class ContaCorrente extends Conta{
 
@@ -11,28 +10,26 @@ public class ContaCorrente extends Conta{
         this.chequeEspecial = chequeEspecial;
     }
 
-    public void depositaCheque(Cheque cheque){
+    public double getChequeEspecial() {
+        return chequeEspecial;
+    }
 
+    public double deposita(Cheque cheque){
         this.saldo += cheque.valor;
-        System.out.println("o cheque com valor de: "+ cheque.valor + " emitido pelo banco " + cheque.bancoEmisor
-                + ", com data de pagamento: " + cheque.dataPagamento + ".\n Foi depositado na sua conta");
-
+        return saldo;
     }
 
     @Override
-    public void saque() {
-        System.out.print("Que valor deseja sacar? ");
-        double valor = leia.nextDouble();
+    public double saque(double valor) {
+
         if (saldo< valor){
-            saldo+= chequeEspecial;
+            chequeEspecial -= (valor-saldo);
+            saldo =0;
+        } else if (saldo>= valor){
             saldo-= valor;
-            System.out.println("uso do cheque especial.");
+        } else if(saldo+chequeEspecial< valor) {
+            }
+            return super.saldo;
         }
-        if (saldo>= valor){
-            saldo-= valor;
-            System.out.println("saque aceito");
-        } else {
-            System.out.println("saldo mais cheque insuficientes");
-        }
-    }
+
 }

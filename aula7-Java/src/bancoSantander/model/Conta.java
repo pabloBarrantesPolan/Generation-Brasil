@@ -1,12 +1,9 @@
 package bancoSantander.model;
 
-import java.util.Scanner;
 
 public abstract class Conta {
 
-    Scanner leia = new Scanner(System.in);
-
-    Cliente cliente;
+    private Cliente cliente;
     protected double saldo;
 
     public Conta( Cliente cliente) {
@@ -15,16 +12,12 @@ public abstract class Conta {
         this.saldo = saldo;
     }
 
-    public void deposita(){
-        System.out.print("Que valor deseja depositar? ");
-        double valor = leia.nextDouble();
-        this.saldo += valor;
-        System.out.println(" ");
+    public double deposita(double valor){
+        saldo += valor;
+        return saldo;
     }
 
-    public  void saque(){
-
-    }
+    public abstract double saque(double valor);
 
     public double consultaSaldo(){
         System.out.println("seu saldo é: " + this.saldo + " R$");

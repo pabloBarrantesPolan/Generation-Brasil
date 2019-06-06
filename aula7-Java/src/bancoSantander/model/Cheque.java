@@ -2,7 +2,8 @@ package bancoSantander.model;
 
 public class Cheque {
     protected double valor;
-    protected String bancoEmisor,dataPagamento;
+    protected String bancoEmisor;
+    protected String dataPagamento;
 
     public void setValor(double valor) {
         this.valor = valor;
