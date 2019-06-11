@@ -17,7 +17,6 @@ public class ArrayDe9 {
 
         }
 
-
 // loop
         for (int j = 0; j < lista.length; j++) {
 
@@ -35,12 +34,8 @@ public class ArrayDe9 {
 
         }
 
-
-
         for (Integer numero : listaDePrimos) {
             System.out.print(numero+" ");
         }
-
-
     }
 }
