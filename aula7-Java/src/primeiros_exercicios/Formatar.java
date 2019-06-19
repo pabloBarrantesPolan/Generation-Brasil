@@ -1,3 +1,5 @@
+package primeiros_exercicios;
+
 public class Formatar {
     public static void main(String[] args) {
         System.out.printf("R...............= %d\n",4 - (5-17)/(2*3));

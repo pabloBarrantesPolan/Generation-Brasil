@@ -1,3 +1,5 @@
+package primeiros_exercicios;
+
 import java.io.Writer;
 import java.util.List;
 import java.util.Scanner;

@@ -30,4 +30,3 @@ UNIQUE KEY(id_livro, id_aluno, data_emprestimo)
 
 describe emprestimo;
 
-drop database biblioteca;

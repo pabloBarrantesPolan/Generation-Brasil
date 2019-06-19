@@ -1,3 +1,5 @@
+package primeiros_exercicios;
+
 public class MultiplicaPares {
 
     public static void main(String[] args) {

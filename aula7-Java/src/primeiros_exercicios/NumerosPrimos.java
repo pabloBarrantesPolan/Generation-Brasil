@@ -1,3 +1,5 @@
+package primeiros_exercicios;
+
 import java.util.Date;
 import java.util.Scanner;
 
