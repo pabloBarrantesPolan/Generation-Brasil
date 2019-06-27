@@ -1,15 +1,16 @@
-package or.generation.brazil.gfood.cliente;
+package or.generation.brazil.gfood.produto;
 
+import com.sun.istack.internal.NotNull;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
 
 @Entity
-public class Cliente {
+public class Produto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +19,7 @@ public class Cliente {
     @NotNull
     private String nome;
 
-    private String endereco;
+    private String descricao;
 
     public Long getId() {
         return id;
@@ -36,11 +37,11 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
