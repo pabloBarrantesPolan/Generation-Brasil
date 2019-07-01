@@ -18,4 +18,14 @@ create table restaurante(
 );
 
 
-describe restaurante;
+describe cliente;
+
+show tables;
+drop  table cliente;
+
+select * from cliente;
+ALTER TABLE cliente ADD data_nasc date not null ;
+
+ALTER TABLE produto ADD preco decimal(10,2) not null ;
+
+insert into cliente values("1", "Pablo", "rua um", "1991-01-06");

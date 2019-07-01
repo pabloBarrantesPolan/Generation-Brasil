@@ -28,6 +28,11 @@ public class ClienteController {
         return  repository.findAll();
     }
 
+    @GetMapping("/clientes/{id}")
+    public Optional<Cliente> findById(@PathVariable Long id) {
+
+        return  repository.findById(id);
+    }
 
     @PutMapping("/clientes/{id}")
     public Cliente Update(@PathVariable Long id, @RequestBody Cliente cliente) throws ResourceNotFoundException {
@@ -35,6 +40,7 @@ public class ClienteController {
         return repository.findById(id).map(c -> {
             c.setNome(cliente.getNome());
             c.setEndereco(cliente.getEndereco());
+            c.setData_nasc(cliente.getData_nasc());
             return repository.save(c);
         }).orElseThrow(() ->
                 new ResourceNotFoundException("Não existe cliente com o ID: " + id));
