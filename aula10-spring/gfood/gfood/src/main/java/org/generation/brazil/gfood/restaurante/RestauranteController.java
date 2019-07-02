@@ -1,13 +1,12 @@
-package or.generation.brazil.gfood.restaurante;
+package org.generation.brazil.gfood.restaurante;
 
-import or.generation.brazil.gfood.cliente.Cliente;
-import or.generation.brazil.gfood.cliente.ClienteRepository;
-import or.generation.brazil.gfood.exception.ResourceNotFoundException;
+import org.generation.brazil.gfood.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -27,6 +26,19 @@ public class RestauranteController {
     @GetMapping("/restaurantes")
     public List<Restaurante> findAll(){
         return  repository.findAll();
+    }
+
+
+    @GetMapping("/restaurantes/{id}")
+    public Optional<Restaurante> findById(@PathVariable Long id) {
+
+        return  repository.findById(id);
+    }
+
+    @GetMapping("/restaurantes/pesquisa/{nome}")
+    public List<Restaurante> findByNome(@PathVariable String nome) {
+
+        return  repository.findAllByNome(nome);
     }
 
 

@@ -1,13 +1,10 @@
-package or.generation.brazil.gfood.produto;
+package org.generation.brazil.gfood.produto;
 
-import jdk.management.resource.ResourceRequestDeniedException;
-import or.generation.brazil.gfood.cliente.Cliente;
-import or.generation.brazil.gfood.exception.ResourceNotFoundException;
+import org.generation.brazil.gfood.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,6 +29,11 @@ public class ProdutoController {
     public Optional<Produto> findById(@PathVariable Long id) {
 
         return  repository.findById(id);
+    }
+    @GetMapping("/produtos/pesquisa/{nome}")
+    public List<Produto> findByNome(@PathVariable String nome) {
+
+        return  repository.findAllByNome(nome);
     }
 
 

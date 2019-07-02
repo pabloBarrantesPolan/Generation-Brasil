@@ -1,4 +1,4 @@
-package or.generation.brazil.gfood.produto;
+package org.generation.brazil.gfood.produto;
 
 import com.sun.istack.internal.NotNull;
 import lombok.Data;

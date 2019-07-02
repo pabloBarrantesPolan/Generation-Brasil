@@ -1,4 +1,4 @@
-package or.generation.brazil.gfood.restaurante;
+package org.generation.brazil.gfood.restaurante;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package or.generation.brazil.gfood.exception;
+package org.generation.brazil.gfood.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

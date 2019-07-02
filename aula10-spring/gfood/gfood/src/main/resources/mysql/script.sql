@@ -22,10 +22,10 @@ describe cliente;
 
 show tables;
 drop  table cliente;
-
+drop database gfood;
 select * from cliente;
 ALTER TABLE cliente ADD data_nasc date not null ;
 
 ALTER TABLE produto ADD preco decimal(10,2) not null ;
 
-insert into cliente values("1", "Pablo", "rua um", "1991-01-06");
+insert into cliente values("2","Geni", "rua um", "1994-01-06");

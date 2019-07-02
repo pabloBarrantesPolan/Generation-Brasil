@@ -1,4 +1,4 @@
-package or.generation.brazil.gfood;
+package org.generation.brazil.gfood;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

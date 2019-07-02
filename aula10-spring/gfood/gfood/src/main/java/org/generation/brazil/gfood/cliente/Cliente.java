@@ -1,13 +1,11 @@
-package or.generation.brazil.gfood.cliente;
+package org.generation.brazil.gfood.cliente;
 
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 
 @Data
@@ -24,7 +22,8 @@ public class Cliente {
     private String endereco;
 
     @NotNull
-    private LocalDate data_nasc;
+    @Column(name = "data_nasc")
+    private Date dataNasc;
 
 
 

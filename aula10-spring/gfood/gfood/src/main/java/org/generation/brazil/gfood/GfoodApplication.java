@@ -1,4 +1,4 @@
-package or.generation.brazil.gfood;
+package org.generation.brazil.gfood;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
