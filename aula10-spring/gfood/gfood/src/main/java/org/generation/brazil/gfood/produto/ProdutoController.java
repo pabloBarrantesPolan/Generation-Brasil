@@ -1,5 +1,6 @@
 package org.generation.brazil.gfood.produto;
 
+import java.math.BigDecimal;
 import org.generation.brazil.gfood.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,6 +37,28 @@ public class ProdutoController {
         return  repository.findAllByNome(nome);
     }
 
+    //pesquisa por valor >10
+
+    @PostMapping("/produtos/valor")
+    public List<Produto> findByPreco(@RequestParam BigDecimal valor){
+
+        return repository.findByPrecoAfter(valor);
+    }
+
+
+    //pesquisa por valor >10 && <20
+    @PostMapping("/produtos/valores")
+    public List<Produto> findByPrecoBetween(@RequestParam BigDecimal valorMin, @RequestParam BigDecimal valorMax){
+
+        return repository.findByPrecoBetween(valorMin, valorMax);
+    }
+
+    //pesquisa por like nome...
+    @PostMapping("/produtos/valores/nome")
+    public List<Produto>  findByNomeContaining(@RequestParam  String nome) {
+        return repository.findByNomeContaining(nome);
+    }
+
 
     @PutMapping("/produtos/{id}")
     public Produto update(@PathVariable Long id, @RequestBody Produto produto) throws ResourceNotFoundException {
@@ -48,6 +71,15 @@ public class ProdutoController {
             }).orElseThrow(() ->
                     new ResourceNotFoundException("Não existe produto com o ID: " + id));
         }
+    // update so o preco
+    @PutMapping("/produtos/preco/{id}")
+    public Produto updatePreco(@PathVariable Long id, @RequestParam BigDecimal valor) throws ResourceNotFoundException {
+        return repository.findById(id).map(p -> {
+            p.setPreco(valor);
+            return repository.save(p);
+        }).orElseThrow(() ->
+            new ResourceNotFoundException("Não existe produto com o ID: " + id));
+    }
 
     @DeleteMapping("/produtos/{id}")
     public void delete(@PathVariable Long id){

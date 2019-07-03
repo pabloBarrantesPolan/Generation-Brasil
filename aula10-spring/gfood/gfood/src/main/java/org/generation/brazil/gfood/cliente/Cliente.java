@@ -1,11 +1,13 @@
 package org.generation.brazil.gfood.cliente;
 
 
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.LocalDate;
 import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
-import java.time.LocalDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Data
@@ -23,8 +25,8 @@ public class Cliente {
 
     @NotNull
     @Column(name = "data_nasc")
-    private Date dataNasc;
-
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNasc;
 
 
     }

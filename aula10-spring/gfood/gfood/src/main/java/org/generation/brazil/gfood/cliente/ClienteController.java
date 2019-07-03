@@ -1,13 +1,13 @@
 package org.generation.brazil.gfood.cliente;
 
 
+import java.time.LocalDate;
 import org.generation.brazil.gfood.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,10 +43,16 @@ public class ClienteController {
     }
 
     @PostMapping("/clientes/data")
-    public List<Cliente> findByDate(@RequestParam Date data) {
+    public List<Cliente> findByDataNasc(@RequestParam @DateTimeFormat(iso = ISO.DATE) LocalDate data) {
 
        return repository.findByDataNasc(data);
     }
+
+  @PostMapping("/clientes/nome/data")
+  public List<Cliente> findByNameAndDate(@RequestParam LocalDate data, @RequestParam String nome) {
+
+    return repository.findByNomeAndDataNasc(nome, data);
+  }
 
     @PutMapping("/clientes/{id}")
     public Cliente Update(@PathVariable Long id, @RequestBody Cliente cliente) throws ResourceNotFoundException {
@@ -61,14 +67,20 @@ public class ClienteController {
 
     }
 
+  @PutMapping("/clientes/altera{id}")
+  public Cliente UpdateName(@PathVariable Long id, @RequestParam String nome) throws ResourceNotFoundException {
+    // "UPDATE cliente SET ... WHERE ..."
+    return repository.findById(id).map(c -> {
+      c.setNome(nome);
+      return repository.save(c);
+    }).orElseThrow(() ->
+        new ResourceNotFoundException("Não existe cliente com o ID: " + id));
+  }
 
-
-   @DeleteMapping("/clientes/{id}")
+    @DeleteMapping("/clientes/{id}")
     public void delete(@PathVariable Long id){
-       repository.deleteById(id);
-   }
+      repository.deleteById(id);
+    }
 
 
-
-
-}
+  }
