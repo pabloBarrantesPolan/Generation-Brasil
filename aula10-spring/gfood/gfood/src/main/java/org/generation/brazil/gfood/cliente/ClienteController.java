@@ -1,6 +1,7 @@
 package org.generation.brazil.gfood.cliente;
 
 
+import java.sql.Date;
 import java.time.LocalDate;
 import org.generation.brazil.gfood.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @RestController
+@RequestMapping("/api/vl")
 public class ClienteController {
 
     @Autowired
@@ -49,7 +52,7 @@ public class ClienteController {
     }
 
   @PostMapping("/clientes/nome/data")
-  public List<Cliente> findByNameAndDate(@RequestParam LocalDate data, @RequestParam String nome) {
+  public List<Cliente> findByNameAndDate(@RequestParam @DateTimeFormat(iso = ISO.DATE) LocalDate data, @RequestParam String nome) {
 
     return repository.findByNomeAndDataNasc(nome, data);
   }
@@ -67,7 +70,7 @@ public class ClienteController {
 
     }
 
-  @PutMapping("/clientes/altera{id}")
+  @PatchMapping("/clientes/altera{id}")
   public Cliente UpdateName(@PathVariable Long id, @RequestParam String nome) throws ResourceNotFoundException {
     // "UPDATE cliente SET ... WHERE ..."
     return repository.findById(id).map(c -> {
@@ -78,8 +81,15 @@ public class ClienteController {
   }
 
     @DeleteMapping("/clientes/{id}")
-    public void delete(@PathVariable Long id){
+    public void deleteById(@PathVariable Long id){
       repository.deleteById(id);
+    }
+
+    @DeleteMapping("/clientes/apaga")
+    public void deleteByNomeAndDataNasc(@RequestParam String nome,
+    @RequestParam  @DateTimeFormat(iso = ISO.DATE) LocalDate datanasc){
+
+       repository.deleteByNomeAndDataNasc(nome, datanasc);
     }
 
 

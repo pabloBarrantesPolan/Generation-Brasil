@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 @RestController
+@RequestMapping("/api/vl")
 public class ProdutoController {
 
     @Autowired
@@ -84,5 +86,10 @@ public class ProdutoController {
     @DeleteMapping("/produtos/{id}")
     public void delete(@PathVariable Long id){
         repository.deleteById(id);
+    }
+
+    @DeleteMapping("/produtos/apaga")
+    public void  deleteByPrecoLessThan(@RequestParam BigDecimal valor)  {
+        repository.deleteByPrecoLessThan(valor);
     }
 }

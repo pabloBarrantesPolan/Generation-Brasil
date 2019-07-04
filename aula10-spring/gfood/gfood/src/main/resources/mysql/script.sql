@@ -1,5 +1,5 @@
 CREATE  DATABASE gfood;
--- drop database gfood;
+drop database gfood;
 use gfood;
 show  tables
 ;
